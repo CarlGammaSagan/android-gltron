@@ -367,7 +367,7 @@ public class GLTronGame {
 			for(plyr = 0; plyr < mPrefs.NumberOfPlayers(); plyr++)
 			{
 				Players[plyr] = new Player(plyr, mCurrentGridSize, LightBike, tronHUD);
-				Players[plyr].setSpeed(mPrefs.Speed());
+				Players[plyr].setSpeed(mPrefs.getSpeeds(plyr));
 			}
 			
 			mRecognizer = new Recognizer(mCurrentGridSize);

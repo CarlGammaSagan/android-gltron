@@ -56,8 +56,12 @@ public class UserPrefs {
 	private float mGridSize;
 	private float mSpeed;
 	private int mPlayerColourIndex;
-	
-	public UserPrefs(Context ctx)
+
+    private float[] bikeSpeeds;
+    private String defaultBikeSpeed = "1";
+
+
+    public UserPrefs(Context ctx)
 	{
 		mContext = ctx;
 		ReloadPrefs();
@@ -101,7 +105,17 @@ public class UserPrefs {
 		mSpeed = C_SPEED[speedIndex];
 		mPlayerColourIndex = Integer.valueOf(prefs.getString("playerBike","0"));
 		mDrawRecog = prefs.getBoolean("drawRecog", true);
-	}
+
+        bikeSpeeds = new float[6];
+        bikeSpeeds[0] = Integer.valueOf(prefs.getString("bike1Speed", defaultBikeSpeed));
+        bikeSpeeds[1] = Integer.valueOf(prefs.getString("bike2Speed", defaultBikeSpeed));
+        bikeSpeeds[2] = Integer.valueOf(prefs.getString("bike3Speed", defaultBikeSpeed));
+        bikeSpeeds[3] = Integer.valueOf(prefs.getString("bike4Speed", defaultBikeSpeed));
+        bikeSpeeds[4] = Integer.valueOf(prefs.getString("bike5Speed", defaultBikeSpeed));
+        bikeSpeeds[5] = Integer.valueOf(prefs.getString("bike6Speed", defaultBikeSpeed));
+
+
+    }
 	
 	public Camera.CamType CameraType()
 	{
@@ -138,8 +152,13 @@ public class UserPrefs {
 	{
 		return mSpeed;
 	}
-	
-	public int PlayerColourIndex()
+
+    public float getSpeeds(int playerNum)
+    {
+        return bikeSpeeds[playerNum];
+    }
+
+    public int PlayerColourIndex()
 	{
 		return mPlayerColourIndex;
 	}

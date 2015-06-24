@@ -71,17 +71,53 @@
 		                   android:entries="@array/arenaEntries"
 		                   android:entryValues="@array/arenaValues" />
 		
-		<ListPreference  android:title="Game Speed"
-		                 android:summary="Select the speed of the game (changes won't take effect until a new game is started)"
-		                 android:key="gameSpeed"
-		                 android:defaultValue="1"
-		                 android:entries="@array/gameSpeedEntries"
-		                 android:entryValues="@array/gameSpeedValues" />
 		
 		<CheckBoxPreference  android:title="Draw Recognizer"
 		                     android:summary="Display the Recognizer in game (can slow framerate if enabled)"
 		                     android:defaultValue="true"
 		                     android:key="drawRecog" />
 		
-	</PreferenceCategory>    
+	</PreferenceCategory>
+
+
+	<PreferenceCategory
+		android:title="Speed Control Options"
+		android:key="fifth_category">
+
+	    		<EditTextPreference  android:title="Speed for your own bike"
+		                 android:summary="Select the speed for your own bike (changes won't take effect until a new game is started)"
+		                 android:key="bike1Speed"
+		                 android:inputType="number"
+		                 android:defaultValue="1" />
+
+	    		<EditTextPreference  android:title="Speed for AI bike 2"
+		                 android:summary="Select the speed for bike 2 (changes won't take effect until a new game is started)"
+		                 android:key="bike2Speed"
+		                 android:inputType="number"
+		                 android:defaultValue="1" />
+	    			    			    		
+	    		<EditTextPreference  android:title="Speed for AI bike 3"
+		                 android:summary="Select the speed for bike 3 (changes won't take effect until a new game is started)"
+		                 android:key="bike3Speed"
+		                 android:inputType="number"
+		                 android:defaultValue="1" />
+	    		
+	    		<EditTextPreference  android:title="Speed for AI bike 4"
+		                 android:summary="Select the speed for bike 4 (changes won't take effect until a new game is started)"
+		                 android:key="bike4Speed"
+		                 android:inputType="number"
+		                 android:defaultValue="1" />
+	    		
+	    		<EditTextPreference  android:title="Speed for AI bike 5"
+		                 android:summary="Select the speed for bike 5 (changes won't take effect until a new game is started)"
+		                 android:key="bike5Speed"
+		                 android:inputType="number"
+		                 android:defaultValue="1" />
+	    		
+	    		<EditTextPreference  android:title="Speed for AI bike 6"
+		                 android:summary="Select the speed for bike 6 (changes won't take effect until a new game is started)"
+		                 android:key="bike6Speed"
+		                 android:inputType="number"
+		                 android:defaultValue="1" />	    			    			    			    		
+	</PreferenceCategory>
 </PreferenceScreen>
