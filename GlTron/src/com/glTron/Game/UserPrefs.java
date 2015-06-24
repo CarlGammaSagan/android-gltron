@@ -40,9 +40,7 @@ public class UserPrefs {
 	private final String C_DEFAULT_CAM_TYPE = "1";
 	
 	private static final float C_GRID_SIZES[] = {360.0f, 720.0f, 1440.0f};
-	
-	private static final float C_SPEED[] = {5.0f, 10.0f, 15.0f, 20.0f};
-	
+
 	private Context mContext;
 	private Camera.CamType mCameraType;
 	
@@ -54,7 +52,6 @@ public class UserPrefs {
 	
 	private int mNumOfPlayers;
 	private float mGridSize;
-	private float mSpeed;
 	private int mPlayerColourIndex;
 
     private float[] bikeSpeeds;
@@ -71,8 +68,7 @@ public class UserPrefs {
 	{
 		int cameraType;
 		int gridIndex;
-		int speedIndex;
-		
+
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 		cameraType = Integer.valueOf(prefs.getString("cameraPref",C_DEFAULT_CAM_TYPE));
 		
@@ -101,8 +97,6 @@ public class UserPrefs {
 		mNumOfPlayers = Integer.valueOf(prefs.getString("playerNumber", "4"));
 		gridIndex = Integer.valueOf(prefs.getString("arenaSize", "1"));
 		mGridSize = C_GRID_SIZES[gridIndex];
-		speedIndex = Integer.valueOf(prefs.getString("gameSpeed", "1"));
-		mSpeed = C_SPEED[speedIndex];
 		mPlayerColourIndex = Integer.valueOf(prefs.getString("playerBike","0"));
 		mDrawRecog = prefs.getBoolean("drawRecog", true);
 
@@ -148,10 +142,6 @@ public class UserPrefs {
 		return mGridSize;
 	}
 	
-	public float Speed()
-	{
-		return mSpeed;
-	}
 
     public float getSpeeds(int playerNum)
     {
